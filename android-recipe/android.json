@@ -1,5 +1,5 @@
 {
-    "origin" : "https://raw.github.com/markmarch/Lift-Android/android-recipe/android.json",
+    "origin"  : "https://raw.github.com/markmarch/Lift-Android/android-recipe/android.json",
     "version" : 1.0,
     "sources" : [
         {
@@ -9,28 +9,28 @@
     ],
     "arguments": [
         {
-            "name" : "mainpack",
-            "descriptiveName" : "Main package name(example: com.foo.app)"
+            "name"           : "mainpack",
+            "descriptiveName": "Main package name(example: com.foo.app)"
         },
         {
-            "name" : "activitypack",
-            "descriptiveName" : "Package for activities",
-            "default": "${mainpack}.activity"
+            "name"           : "activitypack",
+            "descriptiveName": "Package for activities",
+            "default"        : "${mainpack}.activity"
         },
         {
-            "name" : "activityname",
-            "descriptiveName" : "Name of the activity class (exampe: MyActivity)"
+            "name"           : "activityname",
+            "descriptiveName": "Name of the activity class (exampe: MyActivity)"
         }
     ],
     "templates" : [
         {
-            "name" : "activity",
-            "description" : "creates an android activity",
-            "arguments": ["mainpack", "activitypack", "activityname"],
-            "files" : [
+            "name"       : "activity",
+            "description": "creates an android activity",
+            "arguments"  : ["mainpack", "activitypack", "activityname"],
+            "files"      : [
                 {
-                    "file" : "activity.ssp",
-                    "destination" : "src/main/scala/${activitypack}/${activityname}.scala"
+                    "file"       : "activity.ssp",
+                    "destination": "src/main/scala/${activitypack}/${activityname}.scala"
                 }
             ]
         }
