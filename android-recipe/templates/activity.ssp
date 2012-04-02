@@ -1,0 +1,11 @@
+package ${mainpack}
+package ${activitypack}
+
+import android.app.Activity
+import android.os.Bundle
+
+class ${activityname} extends Activity {
+  override def onCreate(savedInstanceState: Bundle) {
+      super.onCreate(savedInstanceState)
+  }
+}
