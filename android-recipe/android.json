@@ -4,7 +4,7 @@
     "sources" : [
         {
             "name" : "activity.ssp",
-            "url"  : "https://raw.github.com/markmarch/Lift-Android/android-recipe/templates/activity.ssp"
+            "url"  : "https://raw.github.com/markmarch/Lifty-Android/master/android-recipe/templates/activity.ssp"
         }
     ],
     "arguments": [
