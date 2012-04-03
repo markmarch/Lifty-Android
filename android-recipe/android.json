@@ -14,8 +14,8 @@
         },
         {
             "name"           : "activitypack",
-            "descriptiveName": "Package for activities",
-            "default"        : "${mainpack}.activity"
+            "descriptiveName": "Sub package name for activities",
+            "default"        : "activity"
         },
         {
             "name"           : "activityname",
