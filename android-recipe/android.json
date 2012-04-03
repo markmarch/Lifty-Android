@@ -5,7 +5,20 @@
         {
             "name" : "activity.ssp",
             "url"  : "https://raw.github.com/markmarch/Lifty-Android/master/android-recipe/templates/activity.ssp"
-        }
+        },
+        {
+            "name" : "layout.ssp",
+            "url"  : "https://raw.github.com/markmarch/Lifty-Android/master/android-recipe/templates/layout.ssp"
+        },
+        {
+            "name" : "menu.ssp",
+            "url"  : "https://raw.github.com/markmarch/Lifty-Android/master/android-recipe/templates/menu.ssp"
+        },
+        {
+            "name" : "resources.ssp",
+            "url"  : "https://raw.github.com/markmarch/Lifty-Android/master/android-recipe/templates/resources.ssp"
+        },
+
     ],
     "arguments": [
         {
@@ -20,6 +33,25 @@
         {
             "name"           : "activityname",
             "descriptiveName": "Name of the activity class (exampe: MyActivity)"
+        },
+        {
+            "name"           : "filename",
+            "descriptiveName": "Name of the xml file"
+        },
+        {
+            "name"           : "layoutfolder",
+            "descriptiveName": "Name of the layout folder for this layout",
+            "default"        : "layout"
+        },
+        {
+            "name"           : "valuefolder",
+            "descriptiveName": "Name of the value folder for this resource file",
+            "default"        : "values"
+        },
+        {
+            "name"           : "rootlayout",
+            "descriptiveName": "Root layout of the layout file",
+            "default"        : "LinearLayout"
         }
     ],
     "templates" : [
@@ -31,6 +63,39 @@
                 {
                     "file"       : "activity.ssp",
                     "destination": "src/main/scala/${activitypack}/${activityname}.scala"
+                }
+            ]
+        },
+        {
+            "name"       : "layout",
+            "description": "create an xml layout file",
+            "arguments"  : ["filename", "layoutfolder", "rootlayout"],
+            "files"      : [
+                {
+                    "file"       : "layout.ssp",
+                    "destination": "src/main/res/${layoutfolder}/${filename}.xml"
+                }
+            ]
+        },
+        {
+            "name"       : "menu",
+            "description": "creates an xml menu file",
+            "arguments"  : ["filename"],
+            "files"      : [
+                {
+                    "file"       : "menu.ssp",
+                    "destination": "src/main/res/menu/${filename}.xml"
+                }
+            ]
+        },
+        {
+            "name"       : "resources",
+            "description": "creates an xml resources file",
+            "arguments"  : ["filename", "valuefolder"],
+            "files"      : [
+                {
+                    "file"       : "resources.ssp",
+                    "destination": "src/main/res/{valuefolder}/${filename}.xml"
                 }
             ]
         }
